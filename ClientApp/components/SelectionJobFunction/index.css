@@ -1,0 +1,153 @@
+.filter-list-item {
+    border-top: 1px solid #ebeef0;
+    margin-left: 60px;
+    padding: 15px 0;
+}
+
+    .filter-list-item:hover {
+        margin-left: 0;
+        padding-left: 60px;
+        background: #f9fafb;
+    }
+
+.combobox-collection--item {
+    width: 100%;
+    padding: 10px;
+    border: 0;
+    border-radius: 0;
+    text-align: left;
+    border-bottom: 1px solid #dee2e6;
+    transition: none;
+}
+
+    .combobox-collection--item > p {
+        color: black;
+    }
+
+    .combobox-collection--item svg {
+        color: #1E68C6;
+    }
+
+    .combobox-collection--item:last-child {
+        border-bottom: none;
+    }
+
+    .combobox-collection--item:hover,
+    .combobox-product--detail:hover {
+        background: #1E68C6 !important;
+        color: white !important;
+    }
+
+        .combobox-collection--item:hover > p,
+        .combobox-collection--item:hover svg {
+            color: white;
+        }
+
+
+.product-new--comboboxCollection .ui-popover-dropdown .ui-popover-body {
+    box-shadow: none;
+}
+
+.image-combobox--block {
+    width: 36px;
+    height: 36px;
+    overflow: hidden;
+    margin-right: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.image-combobox--block--variant {
+    width: 60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+.image-combobox--block .img-empty-list,
+.image-combobox--block .hrv-image-empty {
+    min-width: 36px;
+    min-height: 36px;
+    max-width: 36px;
+    max-height: 36px;
+    padding: 0;
+    position: relative;
+    border-radius: 0;
+}
+
+    .image-combobox--block .img-empty-list:before,
+    .image-combobox--block .hrv-image-empty:before {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate3d(-50%, -50%, 0);
+    }
+
+.combobox-add--supplier .form-group {
+    margin-bottom: 0;
+}
+
+.combobox-assignto--blockmain {
+    position: relative;
+}
+
+.combobox-assignto--overlay {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background: rgba(255, 255, 255, 0.9);
+}
+
+.comboboxreport-block .ui-popover-portal__content-wrapper,
+.comboboxreport-block .combobox-product--detail {
+    width: 260px;
+}
+
+.comboboxreport-block .ui-popover-portal__content-wrapper {
+    max-height: 260px;
+    overflow-y: auto;
+    overflow-x: hidden;
+    background-color: #FFFFFF;
+    box-shadow: 0 0 0 1px rgba(39, 44, 48, 0.05), 0 2px 7px 1px rgba(39, 44, 48, 0.16);
+}
+
+.comboboxreport-block .ui-popover-portal__content {
+    width: 100%;
+}
+
+.report-combobox__wrapper-selection {
+    align-items: flex-start;
+    justify-content: space-between;
+    padding: 1rem;
+    cursor: pointer;
+    border-bottom: 1px solid #dee2e6;
+    margin-right: 0;
+    margin-left: 0;
+}
+
+.report-combobox__selected {
+    color: #FFFFFF;
+    background-color: #1E68C6
+}
+
+
+.item--selected .item--selected--removed {
+    display: none
+}
+
+.item--selected:hover .item--selected--removed {
+    display: block
+}
+
+.item--selected:hover .item--selected--checked {
+    display: none
+}
+
+.combobox-collection--item--background {
+    background-color: transparent;
+    width: 100%;
+}

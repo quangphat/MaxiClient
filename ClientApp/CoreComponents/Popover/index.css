@@ -1,0 +1,51 @@
+﻿.ui-popover-control {
+    position: relative;
+}
+
+.ui-popover-dropdown-bottom {
+    position: absolute;
+    top: calc(100%);
+    left: 0;
+    background: #fff;
+    box-shadow: 0 3px 6px 0 rgba(33, 33, 33, 0.1);
+    -webkit-box-shadow: 0 3px 6px 0 rgba(33, 33, 33, 0.1);
+    visibility: hidden;
+    z-index: 3;
+}
+
+.ui-popover-dropdown-scroll {
+    position: absolute;
+    /* top: calc(100%); */
+    bottom: 100%;
+    /* left: 0; */
+    background: #fff;
+    box-shadow: 0 3px 6px 0 rgba(33, 33, 33, 0.1);
+    -webkit-box-shadow: 0 3px 6px 0 rgba(33, 33, 33, 0.1);
+    visibility: hidden;
+    z-index: 3;
+}
+
+.ui-popover-dropdown--fullWidth .ui-popover-dropdown {
+    width: 100%;
+}
+
+.ui-popover-dropdown .ui-popover-body {
+    position: relative;
+    max-height: 200px;
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+
+.ui-popover-dropdown--isOpenning .ui-popover-dropdown {
+    border: 1px solid #d2d6de;
+    visibility: visible;
+}
+
+.assign--user-model .ui-popover-dropdown {
+    width: 100%;
+    min-width: 320px;
+    right: 0;
+    left: auto;
+    border-radius: 4px;
+    margin-top: 10px;
+}

@@ -1,0 +1,55 @@
+.file-upload {
+    max-width: 120px;
+    min-height: 120px;
+    border: 1px dashed #999;
+    position: relative;
+    cursor: pointer;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -webkit-align-items: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -webkit-justify-content: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    background: #fff;
+}
+
+.file-upload.disabled {
+    color: #999;
+    cursor: inherit;
+}
+
+.file-upload .loading-box {
+    position: inherit;
+}
+
+.file-upload img {
+    max-width: 120px;
+    max-height: 120px
+}
+
+.box-uploadfile .uploadfile-item {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    background: #fff;
+}
+
+.box-uploadfile .uploadfile-item:hover, .is-dragging .box-uploadfile .uploadfile-item {
+    background: #f5f6f7;
+}
+
+.box-uploadfile .uploadfile-item svg {
+    margin-bottom: 5px;
+}

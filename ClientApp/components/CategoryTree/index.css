@@ -1,0 +1,50 @@
+﻿.treeview .treeview-node-container > .treeview-node-childs > .treeview-node-container:before {
+    content: "";
+    z-index: 1;
+    position: absolute;
+    top: -20px;
+    bottom: 0;
+    left: -20px;
+    display: block;
+    width: 0;
+    border-left: 1px solid #dde5eb;
+    height: calc(100% + 10px);
+}
+.treeview .treeview-node-container {
+    position: relative;
+}
+.treeview .treeview-node-name {
+    margin-left: 2.2rem;
+    width: 550px;
+    min-height: 40px;
+    display: inline-flex !important;
+    align-items: center;
+    justify-content: left;
+    white-space: normal;
+}
+.treeview .treeview-node-container > div:first-child {
+    margin: 0;
+    padding: 0;
+    margin-bottom: 10px;
+}
+    .treeview .treeview-node-container > div:first-child:hover > .hidden, .treeview .treeview-node-container > div:first-child > :not(.hidden) {
+        display: inline-block;
+    }
+.treeview .treeview-node-container > .treeview-node-childs > .treeview-node-container > div:first-child:before {
+    content: "";
+    z-index: 1;
+    position: absolute;
+    top: 9px;
+    left: -20px;
+    display: block;
+    height: 10px;
+    width: 20px;
+    border-bottom: 1px solid #dadada;
+}
+.treeview .treeview-node-container .treeview-node-childs {
+    margin-left: 30px;
+    display: none;
+}
+.treeview .treeview-node-container  .open-node {
+    display: block;
+}

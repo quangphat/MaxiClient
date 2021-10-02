@@ -1,0 +1,109 @@
+﻿.ui.menu {
+    margin: 1rem 0rem;
+    background-color: #FFFFFF;
+    font-size: 0px;
+    font-weight: normal;
+    -webkit-box-shadow: 0px 0px 0px 1px rgba(0,0,0,0.1);
+    box-shadow: 0px 0px 0px 1px rgba(0,0,0,0.1);
+    border-radius: 0.1875rem;
+}
+    .ui.menu:last-child {
+        margin-bottom: 0rem;
+    }
+.ui.vertical.menu {
+    width: 15rem;
+}
+    .ui.menu.fluid, .ui.vertical.menu.fluid {
+        display: block;
+        width: 100% !important;
+    }
+.ui.page.grid.content .column.center-frame .ui.three.column.grid.famous-tags .row .ui.vertical.fluid.menu {
+    margin: 0;
+}
+.ui.label {
+    display: inline-block;
+    vertical-align: middle;
+    padding: 0.5em 0.8em;
+    color: rgba(0,0,0,0.65);
+    text-transform: uppercase;
+    font-weight: normal;
+    border-radius: 0.325em;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -ms-box-sizing: border-box;
+    box-sizing: border-box;
+    -webkit-transition: background 0.1s linear;
+    -moz-transition: background 0.1s linear;
+    transition: background 0.1s linear;
+}
+.ui.label {
+    text-transform: none;
+}
+
+.ui.label {
+    text-transform: none;
+}
+
+.ui.label {
+    font-size: 0.8125rem;
+}
+.ui.menu .item {
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    -webkit-tap-highlight-color: rgba(0,0,0,0);
+    vertical-align: middle;
+    line-height: 1;
+    text-decoration: none;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -ms-box-sizing: border-box;
+    box-sizing: border-box;
+    -webkit-transition: opacity 0.2s ease, background 0.2s ease, -webkit-box-shadow 0.2s ease;
+    -moz-transition: opacity 0.2s ease, background 0.2s ease, box-shadow 0.2s ease;
+    transition: opacity 0.2s ease, background 0.2s ease, box-shadow 0.2s ease;
+}
+    .ui.menu .item, .ui.menu .item > a:not(.button) {
+        color: rgba(0,0,0,0.75);
+    }
+.ui.menu .item {
+    position: relative;
+    display: inline-block;
+    padding: 0.83em 0.95em;
+    border-top: 0em solid rgba(0,0,0,0);
+    -webkit-tap-highlight-color: rgba(0,0,0,0);
+    -moz-user-select: -moz-none;
+    -khtml-user-select: none;
+    -webkit-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+    .ui.menu .item, .ui.menu .item > a:not(.button) {
+        color: rgba(0,0,0,0.75);
+    }
+.ui.vertical.menu .item {
+    display: block;
+    height: auto !important;
+    border-top: none;
+    border-left: 0em solid rgba(0,0,0,0);
+    border-right: none;
+}
+.ui.vertical.menu > .item:first-child {
+    border-radius: 0.1875em 0.1875em 0px 0px;
+}
+.ui.page.grid.content .column.center-frame .ui.three.column.grid.famous-tags .row .ui.vertical.fluid.menu .ui.label.item {
+    margin: 0 0 0 0;
+}
+.btn-app {
+    border-radius: 1px;
+    position: relative;
+    margin: 0 0 10px 10px;
+    min-width: 80px;
+    height: 60px;
+    text-align: center;
+    color: #666;
+    border: 1px solid #ddd;
+    background-color: #f4f4f4;
+    font-size: 12px;
+}

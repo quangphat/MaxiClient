@@ -1,0 +1,94 @@
+﻿.next-token-list__wrapper {
+    position: relative;
+}
+
+    .next-token-list__wrapper .next-token-list {
+        margin: 0;
+        display: -webkit-box;
+        display: -webkit-flex;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-flex-wrap: wrap;
+        -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+        list-style: none;
+    }
+
+        .next-token-list__wrapper .next-token-list.next-token-list--is-input {
+            padding: 5px;
+            border: 1px solid #C1C7D0;
+            border-radius: 3px;
+            font-weight: 400;
+            text-transform: initial;
+            letter-spacing: initial;
+            -webkit-box-sizing: border-box;
+            box-sizing: border-box;
+            display: block;
+            width: 100%;
+            background: #ffffff;
+            cursor: text;
+            min-height: 40px;
+            padding-bottom: 0;
+        }
+
+.tagit-choice {
+    display: -webkit-inline-box;
+    display: -webkit-inline-flex;
+    display: -ms-inline-flexbox;
+    display: inline-flex;
+    word-wrap: break-word;
+    max-width: 100%;
+    margin-right: 3px;
+    margin-bottom: 3px;
+    background-color: #dfe3e8;
+    color: #454f5b;
+    min-height: 28px;
+    border-radius: 3px;
+    cursor: pointer;
+}
+
+.next-token-list__wrapper .next-token-list .tagit-choice.next-token--is-disabled {
+    opacity: 0.5;
+}
+
+.tagit-label {
+    display: inline-table;
+    vertical-align: middle;
+    font-size: 0.8125rem;
+    background-color: #E8E8E8;
+    border-color: #E8E8E8;
+    padding: 0.5em 0.8em;
+    color: rgba(0,0,0,0.65);
+    font-weight: normal;
+    border-radius: 0.325em;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -ms-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+.next-token-list__wrapper .next-token-list .tagit-choice .tagit-close {
+    -webkit-flex-shrink: 0;
+    -ms-flex-negative: 0;
+    flex-shrink: 0;
+    display: block;
+    padding: 4px 8px 4px 0;
+    color: #6C798F;
+    text-decoration: none;
+}
+
+.next-token-list__wrapper .next-token-list .tagit-choice .tagit-input {
+    border: 0;
+    padding: 5px 8px;
+    box-shadow: none;
+    outline: none;
+}
+
+.next-token-list .input-tags--insert {
+    display: block;
+}
+
+    .next-token-list .input-tags--insert input {
+        display: block;
+        width: 100%;
+    }

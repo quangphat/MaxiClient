@@ -1,0 +1,174 @@
+﻿.comment-box {
+    padding: 10px 0px;
+    position: relative;
+}
+    .comment-box .ui-textarea {
+        padding: .65em 3em .65em 1em;
+    }
+
+.markdown_comment_preview p {
+    margin-left: 10px;
+    margin-top: 0px;
+}
+
+.comment-box-icon {
+    margin-right: 10px;
+    position: absolute;
+    top: 18px;
+    float: right;
+    right: 0px;
+}
+
+    .comment-box-icon > a {
+        margin-left: 0px;
+        color: #bfbfbf;
+    }
+
+.comment-box-avatar {
+    width: 32px;
+    float: left;
+}
+
+.feed-shared-comment-box__form-container {
+    max-width: calc(100% - 36px);
+}
+
+.flex-grow-1 {
+    flex-grow: 1;
+}
+
+.feed-shared-comment-box__form {
+    display: block;
+    box-sizing: border-box;
+    flex-grow: 1;
+    min-width: 0;
+}
+
+.feed-shared-comment-textarea {
+    border: 1px solid #e6e9ec;
+}
+
+.feed-shared-comment-textarea {
+    flex-grow: 1;
+    min-width: 0;
+    display: flex;
+    background-color: #fff;
+}
+
+.feed-shared-comment-textarea__mentions-input {
+    position: relative;
+    box-sizing: border-box;
+    margin: 0;
+}
+
+.feed-shared-comment-textarea__mentions-input {
+    padding: 6px;
+}
+
+.feed-shared-comment-box__form .mentions-input {
+    flex-grow: 1;
+    min-width: 0;
+    position: relative;
+}
+
+.mentions-input .mentions-highlighter-container {
+    position: relative;
+}
+
+.feed-shared-comment-textarea__mentions-input .mentions-highlighter-container {
+    margin: 0;
+    resize: none;
+    overflow: auto;
+}
+
+.feed-shared-comment-textarea__autoresized-area {
+    position: relative;
+}
+
+.feed-shared-comment-textarea__text-box-clone {
+    display: block;
+    visibility: hidden;
+}
+
+.feed-shared-comment-textarea .feed-shared-comment-textarea__text-box, .feed-shared-comment-textarea .feed-shared-comment-textarea__text-box-clone {
+    background: 0 0;
+    white-space: pre-wrap;
+    word-wrap: break-word;
+    resize: none;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    width: 100%;
+    height: 100%;
+    box-shadow: none;
+}
+
+.feed-shared-comment-box__form textarea {
+    border: none;
+    margin: 4px 4px 12px;
+    resize: none;
+}
+
+.feed-shared-comment-textarea .feed-shared-comment-textarea__text-box, .feed-shared-comment-textarea .feed-shared-comment-textarea__text-box-clone {
+    background: 0 0;
+    white-space: pre-wrap;
+    word-wrap: break-word;
+    resize: none;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    width: 100%;
+    height: 100%;
+    box-shadow: none;
+}
+
+.feed-shared-comment-textarea .feed-shared-comment-textarea__text-box {
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.comment-box input {
+    width: calc(100% - 45px);
+    margin-left: 10px;
+    border: 1px solid #dddfe2;
+    padding: 5px 10px;
+    border-radius: 1px;
+}
+
+.comment-box-textarea {
+    /*width: calc(100% - 42px);*/
+    margin-left: 40px;
+    border: 1px solid #dddfe2;
+    padding: 5px 10px;
+    padding-right: 45px;
+    border-radius: 1px;
+    background: #fff;
+    box-sizing: border-box;
+    box-shadow: none;
+    cursor: text;
+}
+
+    .comment-box-textarea:focus {
+        outline: 0;
+        border-color: #3c8dbc !important;
+        box-shadow: none;
+    }
+
+.feed-comment-replies .feed-shared-reply-item .feed-comment-time {
+    font-family: -apple-system,system-ui,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica Neue,Fira Sans,Ubuntu,Oxygen,Oxygen Sans,Cantarell,Droid Sans,Apple Color Emoji,Segoe UI Emoji,Segoe UI Emoji,Segoe UI Symbol,Lucida Grande,Helvetica,Arial,sans-serif;
+    font-size: 12px;
+    line-height: 16px;
+    font-weight: 400;
+    color: rgba(0,0,0,.6);
+}
+
+.feed-comment-time {
+    font-size: 12px;
+    line-height: 16px;
+    font-weight: 400;
+}
+
+.function-button {
+    margin-left: 40px !important;
+}

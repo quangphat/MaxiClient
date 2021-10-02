@@ -1,0 +1,17 @@
+﻿export { Layout } from './Layout/Layout';
+export { EmptyLayout } from './Layout/EmptyLayout';
+export { Home } from './Home/Home';
+export { TeamEdit } from './Home/TeamEdit';
+export { Test } from './Test/Test';
+//export { ArticleDetail } from './Article/ArticleDetail';
+export { CreateArticle } from './Article/CreateArticle';
+export { UpdateArticle } from './Article/UpdateArticle';
+//export { ArticlesByTags } from './Article/ArticlesByTags';
+export { Register } from './Register/Register';
+export { RecommendTags } from './Register/RecommendTags';
+//export { Profile } from './Profile/Profile';
+export { SearchResult } from './Global/SearchResult';
+export { Term } from './Legal/Term';
+export { Error } from './Error/Error'
+export { Login } from './Login/login'
+export { Employees } from './Employees/Employees'

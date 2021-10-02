@@ -1,0 +1,242 @@
+﻿@model my8ShareObject.AccountLogin
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <environment exclude="Development">
+        <link rel="stylesheet" href="~/assets/fonts/font-awesome-4.7.0/css/font-awesome.css" asp-append-version="true" />
+    </environment>
+    <title></title>
+</head>
+<body>
+    <div class="global-wrapper">
+        <div class="login-header">
+            <form class="login-form" action="Login" method="post">
+                <span class="icon1"><i class="fa fa-user" aria-hidden="true"></i></span>
+                <input placeholder="E-mail" class="login-email" name="Email" type="email" required="">
+                <span class="icon2"><i class="fa fa-lock" aria-hidden="true"></i></span>
+                <input placeholder="Password" class="login-password" name="Password" type="password" required="">
+                <input type="submit" class="btn btn-login" value="Login" />
+            </form>
+        </div>
+        <div class="login-body">
+            <div class="register-body">
+                <div class="register-main-content">
+                    <div class="register-form">
+                        <h2 class="title">Hãy là ngôi sao trong việc bạn làm</h2>
+                        <div style="padding-top: 20px;">
+                            <div style="display:block"><h2 class="register-title">Đăng ký</h2></div>
+                            <div><p>Luôn miễn phí</p></div>
+                        </div>
+                        <div class="border-bottom-1"></div>
+                        <div class="register-form-body">
+                            <div style="margin-bottom:10px;">
+                                <div><label>Họ</label></div>
+                                <div><input type="text" class="form-control" id="exampleInputEmail1" placeholder="Nhập họ của bạn"></div>
+                            </div>
+                            <div style="margin-bottom:10px;">
+                                <div><label>Tên</label></div>
+                                <div><input type="text" class="form-control" id="exampleInputEmail2" placeholder="Nhập tên của bạn"></div>
+                            </div>
+                            <div style="margin-bottom:10px;">
+                                <div><label>Email</label></div>
+                                <div><input type="email" class="form-control" id="exampleInputEmail3" placeholder="Nhập email"></div>
+                            </div>
+                            <div style="margin-bottom:10px;">
+                                <h3>Bạn là: </h3>
+                                <a>(Tại sao tôi phải chọn thông tin này?)</a>
+                                <br />
+                                <div>
+                                    <div style="display:inline-block;margin-right:20px;"><input type="radio" name="user-type" />Ứng viên tìm việc</div>
+                                    <div style="display:inline-block"><input type="radio" name="user-type" />Nhà tuyển dụng</div>
+                                </div>
+                            </div>
+                            <span class="agreement">By clicking Join now, you agree to the my8 <br /> <a tabindex="4" href="#">User Agreement</a>, <a tabindex="4" href="#">Privacy Policy</a>, and <a tabindex="4" href="#">Cookie Policy</a>.</span>
+                            <input type="submit" class="btn btn-signup" value="Sign up" />
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
+
+<style type="text/css">
+    .agreement {
+        font-family: /* Roman */ -apple-system, system-ui, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica Neue, Fira Sans, Ubuntu, Oxygen, Oxygen Sans, Cantarell, Droid Sans, Lucida Grande, Helvetica, Arial, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Emoji, Segoe UI Symbol, /* CJK */ Hiragino Kaku Gothic Pro, Meiryo, Hiragino Sans GB W3, /* Arabic */ Noto Naskh Arabic, Droid Arabic Naskh, Geeza Pro, Simplified Arabic, /* Thai */ Noto Sans Thai, Thonburi, Dokchampa, Droid Sans Thai, /* Sans Fallbacks */ Droid Sans Fallback, '.SFNSDisplay-Regular', /* CJK Fallbacks */ Heiti SC, Microsoft Yahei;
+        font-size: 12px;
+        line-height: 16px;
+        font-weight: 400;
+        color: #fff;
+        text-align: center;
+        display: block;
+        margin-top: 16px;
+        margin-bottom: 16px;
+    }
+
+    .login-body {
+        color: #fff;
+    }
+
+    .register-body {
+        align-items: center;
+        padding: 24px 12px;
+    }
+
+    .register-main-content {
+        width: 50%;
+        margin: 0 auto;
+        display: block;
+    }
+
+    .register-form {
+        width: 600px;
+        padding-top: 20px;
+        padding-bottom: 20px;
+        padding-left: 0px;
+        margin: 0 auto;
+        border-radius: 2px;
+        background: rgba(0, 0, 0, 0.52);
+        overflow: hidden;
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-orient: horizontal;
+        -webkit-box-direction: normal;
+        -ms-flex-flow: row wrap;
+        flex-flow: row wrap;
+        -webkit-box-pack: left;
+        -ms-flex-pack: left;
+        justify-content: left;
+        text-align: center;
+    }
+
+    .register-form-body {
+        margin-top: 20px;
+        margin-left: 20px;
+    }
+
+    .border-bottom-1 {
+        width: 100%;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.27);
+    }
+
+    .h2 {
+        font-size: 24px !important;
+    }
+
+    .title {
+        flex: 100%;
+        font-weight: 200;
+    }
+
+    .register-title {
+        margin-left: 20px;
+    }
+
+    .btn-login {
+        background-color: #3c8dbc;
+        border-color: #367fa9;
+        border-radius: 3px;
+        color: #fff;
+        padding: 2px 2px !important;
+        width: 65px;
+    }
+
+    .btn-signup {
+        background-color: #3c8dbc;
+        border-color: #367fa9;
+        border-radius: 3px;
+        color: #fff;
+        padding: 3px 3px !important;
+        width: 300px;
+    }
+
+    .global-wrapper {
+        width: 100%;
+        background-image: url(../../assets/images/banner.jpg);
+        margin: 0px;
+    }
+
+    .login-header {
+        height: 75px;
+        background: rgba(0, 0, 0, 0.52);
+    }
+
+    .login-form {
+        width: 100%;
+        margin-top: 10px;
+        position: absolute;
+        margin-left: 600px;
+    }
+
+    .login-email {
+        width: 230px;
+        outline: none;
+        font-size: 1em;
+        border: none;
+        border-bottom: 1px solid #fff;
+        background: none;
+        color: #fff;
+        padding-left: 5px;
+        padding-bottom: 5px;
+        padding-top: 5px;
+        letter-spacing: 1px;
+        font-family: 'Philosopher', sans-serif;
+        margin-right: 25px;
+    }
+
+    span.icon1, span.icon2 {
+        color: #fff;
+        font-size: 1em;
+    }
+
+    .login-password {
+        width: 230px;
+        outline: none;
+        font-size: 1em;
+        border: none;
+        border-bottom: 1px solid #fff;
+        background: none;
+        color: #fff;
+        padding-left: 5px;
+        padding-bottom: 5px;
+        padding-top: 5px;
+        letter-spacing: 1px;
+        font-family: 'Philosopher', sans-serif;
+        margin-right: 5px;
+    }
+
+    .form-control {
+        display: block;
+        width: 320px;
+        height: 34px;
+        padding: 6px 12px;
+        font-size: 14px;
+        line-height: 1.42857143;
+        background-color: #fff;
+        background-image: none;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        -webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,.075);
+        box-shadow: inset 0 1px 1px rgba(0,0,0,.075);
+        -webkit-transition: border-color ease-in-out .15s,-webkit-box-shadow ease-in-out .15s;
+        -o-transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s;
+        transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s;
+        border-radius: 0;
+        box-shadow: none;
+        border-color: #d2d6de;
+        color: #000 !important;
+    }
+
+    label {
+        display: inline-block;
+        float: left;
+        margin-bottom: 0px;
+    }
+</style>

@@ -1,0 +1,15 @@
+﻿.terms{
+
+}
+.terms ul >li{
+    border-bottom:1px solid #ddd;
+    padding:20px;
+    cursor:pointer;
+}
+    .terms ul > li:hover {
+        color:white;
+        background-color: #3c8dbc;
+    }
+    .terms ul > li:last-child {
+        border-bottom: none;
+    }

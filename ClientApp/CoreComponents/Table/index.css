@@ -1,0 +1,301 @@
+/*** Table List ***/
+
+.ui-table-listing-container {
+    width: 1px;
+    max-width: 100%;
+    min-width: 100%;
+    overflow-x: auto;
+    overflow-y: hidden;
+    -webkit-overflow-scrolling: touch;
+    white-space: nowrap;
+    box-shadow: 0 0 10px rgb(33 33 33 / 5%);
+    border-radius: 4px;
+}
+
+.ui-table-listing-container .ui-table {
+    width: 100%;
+    border-collapse: separate;
+}
+
+.ui-table-listing-container .ui-table thead th {
+    text-transform: uppercase;
+    color: #505F79;
+    font-weight: bold;
+    line-height: 18px;
+    font-size: 14px;
+}
+
+.ui-table-listing-container .ui-table thead th, .ui-table-listing-container .ui-table tbody td, .ui-table-listing-container .ui-table tfoot td {
+    padding: 15px;
+}
+
+.ui-table-listing-container .ui-table tbody tr {
+    border: 1px solid #DFE1E5;
+    background-color: #FFFFFF;
+    box-shadow: 0 2px 4px 0 rgba(33, 33, 33, 0.1);
+}
+
+.ui-table-listing-container .ui-table tbody tr:hover {
+    background-color: #E3F2FD;
+}
+
+/*** End Table List ***/
+
+/*** Table Normal ***/
+
+.ui-table-normal-container {
+    overflow-x: auto;
+    overflow-y: hidden;
+    -webkit-overflow-scrolling: touch;
+}
+
+.ui-table-normal-container .ui-table {
+    width: 100%;
+    max-width: 100%;
+    white-space: nowrap;
+}
+
+.ui-table-normal-container .ui-table thead th, .ui-table-normal-container .ui-table tbody td, .ui-table-normal-container .ui-table tfoot td {
+    padding: 17px;
+}
+
+.ui-table-normal-container .ui-table.ui-table-vertical-top tbody td, .ui-table-normal-container .ui-table.ui-table-vertical-top tfoot td {
+    vertical-align: top;
+}
+
+.ui-table-normal-container .ui-table.ui-table-vertical-middle tbody td, .ui-table-normal-container .ui-table.ui-table-vertical-middle tfoot td {
+    vertical-align: middle;
+}
+
+.ui-table-normal-container .ui-table.ui-table-vertical-bottom tbody td, .ui-table-normal-container .ui-table.ui-table-vertical-bottom tfoot td {
+    vertical-align: bottom;
+}
+
+.ui-table-normal-container .ui-table thead th:first-child, .ui-table-normal-container .ui-table tbody td:first-child, .ui-table-normal-container .ui-table tfoot td:first-child {
+    padding-left: 20px;
+}
+
+.ui-table-normal-container .ui-table thead th:last-child, .ui-table-normal-container .ui-table tbody td:last-child, .ui-table-normal-container .ui-table tfoot td:last-child {
+    padding-right: 20px;
+}
+
+.ui-table-normal-container .ui-table thead th {
+    box-shadow: inset 0 -1px 0 0 #E0E0E0;
+    font-weight: 400;
+    color: #6C798F;
+    line-height: 18px;
+    font-size: 14px;
+    background: #FAFBFC;
+}
+
+.ui-table-normal-container .ui-table tbody td {
+    /* background-color: #FFFFFF; */
+    /* box-shadow: inset 0 -1px 0 0 #E0E0E0; */
+}
+
+.ui-table-normal-container .ui-table tbody tr{
+     border-bottom: solid 1px #e0e0e0; 
+}
+
+/*** End Table Normal ***/
+
+.table-cell--image {
+    max-width: 50px;
+    max-height: 50px;
+    height: 50px;
+    width: 50px;
+    text-align: center;
+    border: 1px solid #EBECF0;
+    vertical-align: middle;
+    background: #fff;
+    margin: 0 auto;
+    border-radius: 3px;
+    overflow: hidden;
+    position: relative;
+}
+
+.table-cell--image .img-empty-list,
+.table-cell--image .hrv-image-empty{
+    border:none;
+}
+
+.table-cell--image .box-image {
+    max-width: 50px;
+    max-height: 50px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate3d(-50%, -50%, 0);
+}
+
+.table-cell--title {
+    width: 280px;
+    max-width: 280px;
+}
+
+.table-cell--string {
+    width: 300px;
+}
+
+.has-bulk-actions .next-input-checkox {
+    position: absolute;
+    top: 25px;
+}
+
+.has-bulk-actions .next-input-checkbox>.next-label--switch, .checkbox-select .next-input-checkbox>.next-label--switch {
+    padding-left: 0;
+}
+
+.table-bulk-actions {
+    z-index: 19;
+    position: absolute;
+    top: 10px;
+    left: 0;
+    right: 0;
+    background: #ffffff;
+    -webkit-box-shadow: 0 2px 4px 0 rgba(33, 33, 33, 0.1);
+    box-shadow: 0 2px 4px 0 rgba(33, 33, 33, 0.1);
+    white-space: nowrap;
+}
+
+.table-bulk-actions .table-bulk-actions-main {
+    display: -webkit-inline-box;
+    display: -webkit-inline-flex;
+    display: -ms-inline-flexbox;
+    display: inline-flex;
+}
+
+.table-bulk-actions .table-bulk-actions-main .bulk-actions-item .bulk-actions-number {
+    padding: 15px 10px 15px 55px;
+}
+
+.table-bulk-actions .table-bulk-actions-main .bulk-actions-item .bulk-actions-select {
+    padding: 15px 10px;
+    color: #212121;
+    text-decoration: none;
+}
+
+.table-bulk-actions .table-bulk-actions-main .bulk-actions-item .bulk-actions-select svg {
+    fill: #9CA7B2;
+    margin-left: 10px;
+}
+
+/*** Fix content 2 line and fixed width header ***/
+
+.overflow-text {
+    overflow: hidden;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    display: -webkit-box;
+    display: -moz-box;
+    -moz-line-clamp: 2;
+    -moz-box-orient: vertical;
+    word-break: break-all;
+    cursor: default;
+    pointer-events: none;
+}
+
+.table-header--check {
+    width: 38px;
+}
+
+.table-header--id {
+    width: 120px;
+    min-width: 120px;
+}
+
+.table-header--picture {
+    width: 4%;
+    min-width: 80px;
+}
+
+.table-header--datetime {
+    width: 12%;
+    min-width: 160px;
+}
+
+.table-header--status {
+    width: 10%;
+    min-width: 100px;
+}
+
+.table-header--string {
+    width: 15%;
+    min-width: 150px;
+}
+
+.table-header--25per {
+    width: 25%
+}
+
+.table-header--money {
+    text-align: right;
+    width: 11%;
+    min-width: 120px;
+}
+.table-header--button {
+    text-align: right;
+    width: 10%;
+    min-width: 10px;
+}
+.table-header--quantity, 
+.table-header--inventory {
+    text-align: center;
+    width: 10%;
+    min-width: 100px;
+}
+
+.table-header--inventory {
+    width: 8%;
+}
+
+.table-header--140 {
+    width: 140px;
+}
+
+.table-header--label-sm {
+    width: 160px;
+}
+
+.table-header--date {
+    width: 170px;
+}
+
+.table-header--phieu {
+    width: 192px;
+}
+
+.table-header--label-md {
+    width: 240px;
+}
+
+.table-header--xl {
+    width: 580px;
+}
+
+.table-fixed table {
+    table-layout: fixed;
+}
+
+.fix-overflow-tooltip .zTooltip-text {
+    display: initial;
+}
+.table-header--name-pic-incl {
+    min-width: 175px;
+}
+.cursor-pointer {
+    cursor: pointer;
+}
+.row {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    margin-left: -15px;
+}
+.pr-3{
+    padding-right: 3px;
+}
+.mr-3{
+    margin-right: 3px;
+}

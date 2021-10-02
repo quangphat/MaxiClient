@@ -1,0 +1,18 @@
+﻿.box-comment {
+    padding: 8px 0;
+    border-bottom: 1px solid #eee;
+}
+.box-comments .comment-text {
+    margin-left: 40px;
+    color: #555;
+}
+.box-comments .username {
+    color: #444;
+    display: block;
+    font-weight: 600;
+}
+.box-comments .text-muted {
+    font-weight: 400;
+    font-size: 12px;
+}
+

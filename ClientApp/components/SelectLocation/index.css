@@ -1,0 +1,16 @@
+.combobox-collection--item {
+    width: 100%;
+    padding: 10px;
+    border: 0;
+    border-radius: 0;
+    text-align: left;
+    border-bottom: 1px solid #dee2e6;
+    transition: none;
+}
+    .combobox-collection--item:hover, .combobox-product--detail:hover {
+        background: #1e68c6 !important;
+        color: #fff !important;
+    }
+    .combobox-collection--item svg {
+        color: #1e68c6;
+    }

@@ -1,0 +1,57 @@
+.geist-container {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    min-width: 1px;
+    max-width: 100%;
+}
+.geist-container.lg-row {
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+.team-item{
+    position: relative;
+    box-sizing: border-box;
+    padding: 16px;
+    background: #fff;
+    border: 1px solid #eaeaea;
+    border-radius: 5px;
+}
+
+.team-item-container{
+    --flex: 1;
+    --justify-content: flex-start;
+    --align-items: stretch;
+}
+.geist-container.team-item-container > * {
+    --gap-ratio: 0.666667;
+}
+.team-item-first{
+    --flex: 1;
+    --justify-content: flex-start;
+    --align-items: center;
+    display: grid;
+    grid-template-areas: "checkbox avatar content actions menu";
+    grid-template-columns: auto auto 1fr auto auto;
+    justify-content: stretch;
+    align-content: stretch;
+    min-width: 1px;
+    max-width: 100%;
+}
+.team-item-first-container{
+    --flex: 1;
+    --justify-content: center;
+    --align-items: stretch;
+}
+.team-item--leader{
+    --flex: 1;
+    --justify-content: flex-start;
+    --align-items: center;
+    display: grid;
+    grid-template-areas: "checkbox avatar content actions menu";
+    grid-template-columns: auto auto 1fr auto auto;
+    justify-content: stretch;
+    align-content: stretch;
+    margin-left: 24px;
+
+}

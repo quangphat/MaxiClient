@@ -1,0 +1,269 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+    <TypeScriptCompileBlocked>true</TypeScriptCompileBlocked>
+    <TypeScriptToolsVersion>Latest</TypeScriptToolsVersion>
+    <IsPackable>false</IsPackable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="AutoMapper" Version="8.0.0" />
+    <PackageReference Include="Microsoft.AspNetCore.Mvc.NewtonsoftJson" Version="3.1.4" />
+    <PackageReference Include="Microsoft.AspNetCore.Mvc.Razor.RuntimeCompilation" Version="3.1.0" />
+    <PackageReference Include="Microsoft.AspNetCore.SignalR" Version="1.1.0" />
+    <PackageReference Include="Microsoft.AspNetCore.SpaServices" Version="3.1.4" />
+    <PackageReference Include="Microsoft.CodeAnalysis.Common" Version="3.11.0" />
+    <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="2.0.4" />
+    <PackageReference Include="MongoDB.Driver" Version="2.10.4" />
+    <PackageReference Include="MsgPack.Cli" Version="1.0.0" />
+    <PackageReference Include="System.IdentityModel.Tokens.Jwt" Version="6.6.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <DotNetCliToolReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Tools" Version="2.0.4" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <!-- Files not to publish (note that the 'dist' subfolders are re-added below) -->
+    <Content Remove="ClientApp\**" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Remove="ClientApp\App\Article\ArticleList.tsx" />
+    <None Remove="ClientApp\App\Article\ArticlesByTags.tsx" />
+    <None Remove="ClientApp\App\Article\CreateArticle.tsx" />
+    <None Remove="ClientApp\App\Article\index.tsx" />
+    <None Remove="ClientApp\App\Article\UpdateArticle.tsx" />
+    <None Remove="ClientApp\App\Error\Error.tsx" />
+    <None Remove="ClientApp\App\Global\SearchResult.tsx" />
+    <None Remove="ClientApp\App\Home\Home.tsx" />
+    <None Remove="ClientApp\App\index.tsx" />
+    <None Remove="ClientApp\App\Job\ApplyJob.tsx" />
+    <None Remove="ClientApp\App\Job\CreateJob.tsx" />
+    <None Remove="ClientApp\App\Job\JobEdit.tsx" />
+    <None Remove="ClientApp\App\Layout\EmptyLayout.tsx" />
+    <None Remove="ClientApp\App\Layout\Layout.tsx" />
+    <None Remove="ClientApp\App\Layout\LayoutHeader.tsx" />
+    <None Remove="ClientApp\App\Legal\Term.tsx" />
+    <None Remove="ClientApp\App\Profile\ArticleList.tsx" />
+    <None Remove="ClientApp\App\Profile\Experience.tsx" />
+    <None Remove="ClientApp\App\Profile\ExperienceItem.tsx" />
+    <None Remove="ClientApp\App\Profile\Profile.tsx" />
+    <None Remove="ClientApp\App\Profile\Settings.tsx" />
+    <None Remove="ClientApp\App\Profile\Skill.tsx" />
+    <None Remove="ClientApp\App\Register\RecommendTags.tsx" />
+    <None Remove="ClientApp\App\Register\Register.tsx" />
+    <None Remove="ClientApp\App\Test\Test.tsx" />
+    <None Remove="ClientApp\App\Utils.tsx" />
+    <None Remove="ClientApp\components\ArticleItem\ArticleItem.tsx" />
+    <None Remove="ClientApp\components\ArticleView\ArticleView.tsx" />
+    <None Remove="ClientApp\components\Locations\Locations.tsx" />
+    <None Remove="ClientApp\CoreComponents\Badge\Badge.tsx" />
+    <None Remove="ClientApp\components\BigTag\BigTag.tsx" />
+    <None Remove="ClientApp\components\CategoryTree\CategoryTree.tsx" />
+    <None Remove="ClientApp\components\CkEditor\CkEditor.tsx" />
+    <None Remove="ClientApp\components\CodeBlock\CodeBlock.tsx" />
+    <None Remove="ClientApp\CoreComponents\ComboboxSearchAjax\ComboboxSearchAjax.tsx" />
+    <None Remove="ClientApp\CoreComponents\ComboboxSearch\ComboboxSearch.tsx" />
+    <None Remove="ClientApp\CoreComponents\CreateSVG\listIcon.tsx" />
+    <None Remove="ClientApp\components\FeedPreview\FeedPreview.tsx" />
+    <None Remove="ClientApp\components\HeaderPage\HeaderPage.tsx" />
+    <None Remove="ClientApp\components\index.tsx" />
+    <None Remove="ClientApp\CoreComponents\index.tsx" />
+    <None Remove="ClientApp\CoreComponents\InputTag\InputTag.tsx" />
+    <None Remove="ClientApp\components\JobSkillTag\JobSkillTag.tsx" />
+    <None Remove="ClientApp\components\LikeBox\LikeBox.tsx" />
+    <None Remove="ClientApp\CoreComponents\Input\InputCurrency.tsx" />
+    <None Remove="ClientApp\CoreComponents\Loading\Loading.tsx" />
+    <None Remove="ClientApp\components\MarkdownEditor\MarkdownEditor.tsx" />
+    <None Remove="ClientApp\CoreComponents\Popover\Popover.tsx" />
+    <None Remove="ClientApp\components\RecommendedTag\RecommendedTag.tsx" />
+    <None Remove="ClientApp\CoreComponents\Locations\Locations.tsx" />
+    <None Remove="ClientApp\CoreComponents\Selection\SelectionV2.tsx" />
+    <None Remove="ClientApp\components\TagDisplay\TagDisplay.tsx" />
+    <None Remove="ClientApp\infrastructure\FormatHelper.tsx" />
+    <None Remove="ClientApp\infrastructure\messagesCode.tsx" />
+    <None Remove="ClientApp\infrastructure\RoutePath.tsx" />
+    <None Remove="ClientApp\infrastructure\SignalR.tsx" />
+    <None Remove="ClientApp\Models\CommentRepliesGroup.tsx" />
+    <None Remove="ClientApp\Models\Enums.tsx" />
+    <None Remove="ClientApp\Models\IAccount.tsx" />
+    <None Remove="ClientApp\Models\IApplyJobModel.tsx" />
+    <None Remove="ClientApp\Models\IArticleMeta.tsx" />
+    <None Remove="ClientApp\Models\IAuthor.tsx" />
+    <None Remove="ClientApp\Models\ICategory.ts" />
+    <None Remove="ClientApp\Models\IComment.tsx" />
+    <None Remove="ClientApp\Models\IJobFunction.tsx" />
+    <None Remove="ClientApp\Models\index.tsx" />
+    <None Remove="ClientApp\Models\INotification.tsx" />
+    <None Remove="ClientApp\Models\IPaging.tsx" />
+    <None Remove="ClientApp\Models\IRegisterModel.tsx" />
+    <None Remove="ClientApp\Models\IReplyComment.tsx" />
+    <None Remove="ClientApp\Models\StringModel.tsx" />
+    <None Remove="ClientApp\repositories\AccountRepository.tsx" />
+    <None Remove="ClientApp\repositories\ArticleRepository.tsx" />
+    <None Remove="ClientApp\repositories\CategoryRepository.tsx" />
+    <None Remove="ClientApp\repositories\CommentRepository.tsx" />
+    <None Remove="ClientApp\repositories\Fetch.tsx" />
+    <None Remove="ClientApp\repositories\JobRepository.tsx" />
+    <None Remove="ClientApp\repositories\RecommendedTagRepository.tsx" />
+    <None Remove="ClientApp\repositories\ReplyCommentRepository.tsx" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Include="ClientApp\infrastructure\messages.json" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="wwwroot\assets\webfonts\fa-brands-400.svg" />
+    <None Include="wwwroot\assets\webfonts\fa-brands-400.woff2" />
+    <None Include="wwwroot\assets\webfonts\fa-regular-400.svg" />
+    <None Include="wwwroot\assets\webfonts\fa-regular-400.woff2" />
+    <None Include="wwwroot\assets\webfonts\fa-solid-900.svg" />
+    <None Include="wwwroot\assets\webfonts\fa-solid-900.woff2" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Reference Include="my8ShareObject">
+      <HintPath>libs\my8ShareObject.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+
+  <ItemGroup>
+    <TypeScriptCompile Include="ClientApp\App\Article\ArticleList.tsx" />
+    <TypeScriptCompile Include="ClientApp\App\Article\ArticlesByTags.tsx" />
+    <TypeScriptCompile Include="ClientApp\App\Article\UpdateArticle.tsx" />
+    <TypeScriptCompile Include="ClientApp\App\Article\CreateArticle.tsx" />
+    <TypeScriptCompile Include="ClientApp\App\Article\index.tsx" />
+    <TypeScriptCompile Include="ClientApp\App\Error\Error.tsx" />
+    <TypeScriptCompile Include="ClientApp\App\Global\SearchResult.tsx" />
+    <TypeScriptCompile Include="ClientApp\App\Home\Home.tsx" />
+    <TypeScriptCompile Include="ClientApp\App\index.tsx" />
+    <TypeScriptCompile Include="ClientApp\App\Job\ApplyJob.tsx" />
+    <TypeScriptCompile Include="ClientApp\App\Job\CreateJob.tsx" />
+    <TypeScriptCompile Include="ClientApp\App\Job\JobEdit.tsx" />
+    <TypeScriptCompile Include="ClientApp\App\Layout\EmptyLayout.tsx" />
+    <TypeScriptCompile Include="ClientApp\App\Layout\Layout.tsx" />
+    <TypeScriptCompile Include="ClientApp\App\Layout\LayoutHeader.tsx" />
+    <TypeScriptCompile Include="ClientApp\App\Legal\Term.tsx" />
+    <TypeScriptCompile Include="ClientApp\App\Profile\ArticleList.tsx" />
+    <TypeScriptCompile Include="ClientApp\App\Profile\Settings.tsx" />
+    <TypeScriptCompile Include="ClientApp\App\Profile\Skill.tsx" />
+    <TypeScriptCompile Include="ClientApp\App\Profile\Experience.tsx" />
+    <TypeScriptCompile Include="ClientApp\App\Profile\ExperienceItem.tsx" />
+    <TypeScriptCompile Include="ClientApp\App\Profile\Profile.tsx" />
+    <TypeScriptCompile Include="ClientApp\App\Register\RecommendTags.tsx" />
+    <TypeScriptCompile Include="ClientApp\App\Register\Register.tsx" />
+    <TypeScriptCompile Include="ClientApp\App\Test\Test.tsx" />
+    <TypeScriptCompile Include="ClientApp\components\FeedPreview\FeedPreview.tsx" />
+    <TypeScriptCompile Include="ClientApp\components\ArticleItem\ArticleItem.tsx" />
+    <TypeScriptCompile Include="ClientApp\components\ArticleView\ArticleView.tsx" />
+    <TypeScriptCompile Include="ClientApp\components\Locations\Locations.tsx" />
+    <TypeScriptCompile Include="ClientApp\CoreComponents\Badge\Badge.tsx" />
+    <TypeScriptCompile Include="ClientApp\components\BigTag\BigTag.tsx" />
+    <TypeScriptCompile Include="ClientApp\components\CkEditor\CkEditor.tsx" />
+    <TypeScriptCompile Include="ClientApp\components\CodeBlock\CodeBlock.tsx" />
+    <TypeScriptCompile Include="ClientApp\CoreComponents\ComboboxSearchAjax\ComboboxSearchAjax.tsx" />
+    <TypeScriptCompile Include="ClientApp\CoreComponents\ComboboxSearch\ComboboxSearch.tsx" />
+    <TypeScriptCompile Include="ClientApp\CoreComponents\CreateSVG\listIcon.tsx" />
+    <TypeScriptCompile Include="ClientApp\components\HeaderPage\HeaderPage.tsx" />
+    <TypeScriptCompile Include="ClientApp\components\index.tsx" />
+    <TypeScriptCompile Include="ClientApp\components\CategoryTree\CategoryTree.tsx" />
+    <TypeScriptCompile Include="ClientApp\CoreComponents\index.tsx" />
+    <TypeScriptCompile Include="ClientApp\CoreComponents\Input\InputCurrency.tsx" />
+    <TypeScriptCompile Include="ClientApp\CoreComponents\Popover\Popover.tsx" />
+    <TypeScriptCompile Include="ClientApp\components\RecommendedTag\RecommendedTag.tsx" />
+    <TypeScriptCompile Include="ClientApp\CoreComponents\InputTag\InputTag.tsx" />
+    <TypeScriptCompile Include="ClientApp\components\LikeBox\LikeBox.tsx" />
+    <TypeScriptCompile Include="ClientApp\CoreComponents\Loading\Loading.tsx" />
+    <TypeScriptCompile Include="ClientApp\components\MarkdownEditor\MarkdownEditor.tsx" />
+    <TypeScriptCompile Include="ClientApp\CoreComponents\Locations\Locations.tsx" />
+    <TypeScriptCompile Include="ClientApp\CoreComponents\Selection\SelectionV2.tsx" />
+    <TypeScriptCompile Include="ClientApp\components\JobSkillTag\JobSkillTag.tsx" />
+    <TypeScriptCompile Include="ClientApp\components\TagDisplay\TagDisplay.tsx" />
+    <TypeScriptCompile Include="ClientApp\infrastructure\FormatHelper.tsx" />
+    <TypeScriptCompile Include="ClientApp\infrastructure\messagesCode.tsx" />
+    <TypeScriptCompile Include="ClientApp\infrastructure\RoutePath.tsx" />
+    <TypeScriptCompile Include="ClientApp\infrastructure\SignalR.tsx" />
+    <TypeScriptCompile Include="ClientApp\infrastructure\Utils.tsx" />
+    <TypeScriptCompile Include="ClientApp\Models\CommentRepliesGroup.tsx" />
+    <TypeScriptCompile Include="ClientApp\Models\Enums.tsx" />
+    <TypeScriptCompile Include="ClientApp\Models\IApplyJobModel.tsx" />
+    <TypeScriptCompile Include="ClientApp\Models\IJobFunction.tsx" />
+    <TypeScriptCompile Include="ClientApp\Models\IPaging.tsx" />
+    <TypeScriptCompile Include="ClientApp\Models\IComment.tsx" />
+    <TypeScriptCompile Include="ClientApp\Models\IAccount.tsx" />
+    <TypeScriptCompile Include="ClientApp\Models\IRegisterModel.tsx" />
+    <TypeScriptCompile Include="ClientApp\Models\ICategory.ts" />
+    <TypeScriptCompile Include="ClientApp\Models\IAuthor.tsx" />
+    <TypeScriptCompile Include="ClientApp\Models\IArticleMeta.tsx" />
+    <TypeScriptCompile Include="ClientApp\Models\index.tsx" />
+    <TypeScriptCompile Include="ClientApp\Models\INotification.tsx" />
+    <TypeScriptCompile Include="ClientApp\Models\IReplyComment.tsx" />
+    <TypeScriptCompile Include="ClientApp\Models\StringModel.tsx" />
+    <TypeScriptCompile Include="ClientApp\repositories\AccountRepository.tsx" />
+    <TypeScriptCompile Include="ClientApp\repositories\JobRepository.tsx" />
+    <TypeScriptCompile Include="ClientApp\repositories\ReplyCommentRepository.tsx" />
+    <TypeScriptCompile Include="ClientApp\repositories\RecommendedTagRepository.tsx" />
+    <TypeScriptCompile Include="ClientApp\repositories\CommentRepository.tsx" />
+    <TypeScriptCompile Include="ClientApp\repositories\CategoryRepository.tsx" />
+    <TypeScriptCompile Include="ClientApp\repositories\ArticleRepository.tsx" />
+    <TypeScriptCompile Include="ClientApp\repositories\Fetch.tsx" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Update="ApiRouteRsx.Designer.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>ApiRouteRsx.resx</DependentUpon>
+    </Compile>
+    <Compile Update="errors.Designer.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>errors.resx</DependentUpon>
+    </Compile>
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Update="ApiRouteRsx.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>ApiRouteRsx.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Update="errors.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>errors.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+  </ItemGroup>
+
+  <Target Name="DebugRunWebpack" BeforeTargets="Build" Condition=" '$(Configuration)' == 'Debug' And !Exists('wwwroot\dist') ">
+    <!-- Ensure Node.js is installed -->
+    <Exec Command="node --version" ContinueOnError="true">
+      <Output TaskParameter="ExitCode" PropertyName="ErrorCode" />
+    </Exec>
+    
+
+    <!-- In development, the dist files won't exist on the first run or when cloning to
+         a different machine, so rebuild them if not already present. -->
+    <Message Importance="high" Text="Performing first-run Webpack build..." />
+    <Exec Command="node node_modules/webpack/bin/webpack.js --config webpack.config.vendor.js" />
+    <Exec Command="node node_modules/webpack/bin/webpack.js" />
+  </Target>
+
+  <Target Name="PublishRunWebpack" AfterTargets="ComputeFilesToPublish">
+    <!-- As part of publishing, ensure the JS resources are freshly built in production mode -->
+    <Exec Command="npm install" />
+    <Exec Command="node node_modules/webpack/bin/webpack.js --config webpack.config.vendor.js --env.prod" />
+    <Exec Command="node node_modules/webpack/bin/webpack.js --env.prod" />
+
+    <!-- Include the newly-built files in the publish output -->
+    <ItemGroup>
+      <DistFiles Include="wwwroot\dist\**; ClientApp\dist\**" />
+      <ResolvedFileToPublish Include="@(DistFiles->'%(FullPath)')" Exclude="@(ResolvedFileToPublish)">
+        <RelativePath>%(DistFiles.Identity)</RelativePath>
+        <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      </ResolvedFileToPublish>
+    </ItemGroup>
+  </Target>
+
+</Project>

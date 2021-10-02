@@ -1,0 +1,225 @@
+.btn {
+    font-size: 14px;
+    line-height: 18px;
+    background: transparent;
+    border-radius: 5px;
+}
+.btn-long {
+    padding: 4px 12px;
+}
+.btn_none-horder{
+    border: none!important;
+}
+.btn-follow {
+    color: #3c8dbc!important;
+    border-color: #3c8dbc!important;
+}
+.btn:focus, .btn.focus {
+    box-shadow: none;
+    outline: none;
+}
+ .btn-xs {
+    padding: 1px 5px;
+    font-size: 12px;
+    line-height: 1.5;
+    border-radius: 3px;
+}
+.btn-thin {
+    background-color: #f4f4f4;
+    color: #444;
+    border-color: #ddd;
+    outline: none;
+    padding-left: 4px;
+    padding-top: 2px;
+    padding-bottom: 2px;
+    padding-right: 4px;
+}
+
+    .btn-thin:hover, .btn-thin:focus {
+        background-color: #e7e7e7;
+        outline: none;
+    }
+
+    .btn-thin[disabled] {
+        background: #DFE1E5;
+        color: #C1C7D0;
+    }
+
+.btn-default {
+    background-color: #f4f4f4;
+    color: #444;
+    border-color: #ddd;
+    outline: none;
+}
+
+    .btn-default:hover, .btn-default:focus {
+        background-color: #e7e7e7;
+        outline: none;
+    }
+
+    .btn-default[disabled] {
+        background: #DFE1E5;
+        color: #C1C7D0;
+    }
+
+.btn-primary {
+    background: #0747A6;
+    color: #ffffff;
+    outline: none;
+}
+
+    .btn-primary:hover, .btn-primary:not(:disabled):not(.disabled):active, .btn-primary:not(:disabled):not(.disabled).active {
+        background: #0052CC;
+        outline: none;
+    }
+
+.btn-danger {
+    background: #F44336;
+}
+
+    .btn-danger:hover, .btn-danger:focus, .btn-danger:active {
+        background: #de1d0f;
+        color: #ffffff;
+    }
+
+.btn-link {
+    color: #1E68C6;
+    padding: 10px;
+}
+
+    .btn-link.no-padding {
+        padding: 0;
+    }
+
+        .btn-link.no-padding:focus {
+            text-decoration: none
+        }
+
+    .btn-link:hover {
+        color: #024e79;
+    }
+
+    .btn-link[disabled], .btn-link[disabled]:hover {
+        text-decoration: none;
+        color: #6c757d;
+    }
+
+.btn-loading {
+    cursor: default;
+    text-shadow: none;
+    color: transparent;
+    position: relative;
+    -webkit-transition: border-color 0.2s ease-out;
+    transition: border-color 0.2s ease-out;
+}
+
+    .btn-loading, .btn-loading:hover, .btn-loading:focus, .btn-loading:active {
+        color: transparent !important;
+    }
+
+        .btn-loading:before {
+            content: "";
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            border-radius: 50%;
+            border-width: 2px;
+            border-style: solid;
+            border-color: #919eab;
+            border-bottom-color: transparent;
+            margin-top: -8px;
+            margin-left: -8px;
+            width: 16px;
+            height: 16px;
+            -webkit-animation: button-loading-spinner 0.7s linear infinite;
+            animation: button-loading-spinner 1s linear infinite;
+        }
+
+.btn-default.btn-loading {
+    background: #fff;
+}
+
+    .btn-default.btn-loading:before {
+        border-color: #6c798f;
+        border-bottom-color: transparent;
+    }
+
+.btn-primary.btn-loading {
+    background: #0747A6;
+}
+
+    .btn-primary.btn-loading:before,
+    .btn-danger.btn-loading:before {
+        border-color: #fff;
+        border-bottom-color: transparent;
+    }
+
+
+@-webkit-keyframes button-loading-spinner {
+    from {
+        -webkit-transform: rotate(0deg);
+        transform: rotate(0deg)
+    }
+
+    to {
+        -webkit-transform: rotate(360deg);
+        transform: rotate(360deg)
+    }
+}
+
+@keyframes button-loading-spinner {
+    from {
+        -webkit-transform: rotate(0deg);
+        transform: rotate(0deg)
+    }
+
+    to {
+        -webkit-transform: rotate(360deg);
+        transform: rotate(360deg)
+    }
+}
+
+.ui-overlay {
+    position: fixed;
+    width: 100vw;
+    height: 100vh;
+    top: 0;
+    left: 0;
+    background: rgba(255, 255, 255, .05);
+    z-index: 9990;
+}
+
+.btn-clean {
+    border: 1px solid #c1c7d0;
+    background: transparent;
+}
+
+.btn-primary.disabled, .btn-primary:disabled {
+    color: #fff;
+    background-color: #5d94e4;
+    border: 1px solid #5d94e4;
+}
+
+.btn-danger.disabled, .btn-danger:disabled {
+    color: #F44336;
+    background-color: transparent;
+    border: 1px solid #F44336;
+}
+
+.btn-danger.btn-loading {
+    background: #F44336;
+    color: white;
+}
+
+.btn-group-xs > .btn, .btn-xs {
+    padding: 1px 5px;
+    font-size: 12px;
+    line-height: 1.5;
+    border-radius: 3px;
+}
+
+.btn-small {
+    padding: 0.3em 0.5em;
+    font-size: 12px;
+    line-height: 16px;
+}

@@ -1,0 +1,136 @@
+﻿{
+  "error": [
+    {
+      "value": "job_tag_missing",
+      "display_vi": "Phải có tối thiểu 3 tag",
+      "display_en": "Error"
+    },
+    {
+      "value": "error",
+      "display_vi": "Không thành công",
+      "display_en": "Error"
+    },
+    {
+      "value": "invalid_data",
+      "display_vi": "Dữ liệu không hợp lệ",
+      "display_en": "Invalid data"
+    },
+    {
+      "value": "not_found_data",
+      "display_vi": "Không tìm thấy dữ liệu",
+      "display_en": "Data not found"
+    },
+    {
+      "value": "email_existed",
+      "display_vi": "Email này đã được đăng ký cho 1 tài khoản khác",
+      "display_en": ""
+    },
+    {
+      "value": "error_login_expected",
+      "display_vi": "Bạn phải đăng nhập",
+      "display_en": ""
+    },
+    {
+      "value": "error_accept_policy",
+      "display_vi": "Bạn phải đồng ý với các chính sách và điều khoản của chúng tôi",
+      "display_en": ""
+    },
+    {
+      "value": "error_display_name_must_not_be_empty",
+      "display_vi": "Tên không được để trống",
+      "display_en": ""
+    },
+    {
+      "value": "error_email_must_not_be_empty",
+      "display_vi": "Email không được để trống",
+      "display_en": ""
+    },
+    {
+      "value": "error_invalid_email",
+      "display_vi": "Email không hợp lệ",
+      "display_en": ""
+    },
+    {
+      "value": "error_password_must_not_be_empty",
+      "display_vi": "Mật khẩu không được để trống",
+      "display_en": ""
+    },
+    {
+      "value": "error_password_not_match",
+      "display_vi": "Mật khẩu không khớp",
+      "display_en": ""
+    },
+    {
+      "value": "error_invalid_password",
+      "display_vi": "Mật khẩu phải có tối thiểu 8 ký tự bao gồm số, chữ cái.",
+      "display_en": ""
+    },
+    {
+      "value": "invalid_password",
+      "display_vi": "Email hoặc mật khẩu không đúng",
+      "display_en": "fail"
+    },
+    {
+      "value": "error_invalid_password_length",
+      "display_vi": "Mật khẩu phải có ít nhất 8 ký tự",
+      "display_en": ""
+    },
+    {
+      "value": "article_need_min_1_tags",
+      "display_vi": "Bài viết phải có ít nhất 1 tag",
+      "display_en": ""
+    },
+    {
+      "value": "article_max_3_tag",
+      "display_vi": "Bài viết chỉ có thể có tối đa 3 tag",
+      "display_en": ""
+    },
+    {
+      "value": "article_title_must_not_be_empty",
+      "display_vi": "Tiêu đề bài viết không được để trống",
+      "display_en": ""
+    },
+    {
+      "value": "article_content_must_not_be_empty",
+      "display_vi": "Nội dung bài viết không được để trống",
+      "display_en": ""
+    },
+    {
+      "value": "article_title_max_length_70",
+      "display_vi": "Tiêu đề bài viết không được vượt quá 70 ký tự",
+      "display_en": ""
+    },
+    {
+      "value": "password_not_match",
+      "display_vi": "Mật khẩu không khớp",
+      "display_en": ""
+    },
+    {
+      "value": "password_length_not_match",
+      "display_vi": "Mật khẩu không phù hợp",
+      "display_en": ""
+    }
+  ],
+  "success": [
+    {
+      "value": "success",
+      "display_vi": "Thành công",
+      "display_en": "Success"
+    },
+    {
+      "value": "auto_save_success",
+      "display_vi": "Đã lưu bài viết",
+      "display_en": "Saved"
+    },
+    {
+      "value": "sign_up_success",
+      "display_vi": "Tạo tài khoản thành công",
+      "display_en": "Sign up successfully"
+    },
+    {
+      "value": "invalid_password",
+      "display_vi": "Mật ",
+      "display_en": "Sign up successfully"
+    }
+  ]
+}

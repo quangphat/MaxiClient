@@ -1,0 +1,31 @@
+﻿.ui-textarea {
+    width: 100%;
+    min-height: 4em;
+    max-height: 10000em;
+    padding: .65em 1em;
+    margin: 0 0 .3em 0;
+    font-size: 1em;
+    border: 1px solid #d2d6de;
+    outline: 0;
+    resize: none;
+    color: #000;
+    -webkit-border-radius: 0.3125em;
+    -webkit-background-clip: padding-box;
+    -moz-border-radius: 0.3125em;
+    -moz-background-clip: padding;
+    border-radius: 1px;
+    background-clip: padding-box;
+    -webkit-transition: height 0.1s;
+    -moz-transition: height 0.1s;
+    -o-transition: height 0.1s;
+    transition: height 0.1s;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    padding: .65em 1em .65em 1em;
+}
+
+    .ui-textarea:focus {
+        border: 1px solid #3c8dbc;
+    }
+

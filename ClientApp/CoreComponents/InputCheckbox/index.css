@@ -1,0 +1,87 @@
+.next-input-checkbox {
+    position: relative;
+}
+
+.next-input-checkbox .next-label--switch {
+    position: relative;
+    padding-left: 25px;
+    margin-bottom: 0;
+    display: inline-block;
+    cursor: pointer;
+    font-weight: normal;
+}
+
+.next-input-checkbox.input-disabled>.next-label--switch {
+    cursor: default;
+    color: #C1C7D0;
+}
+
+.next-input-checkbox .next-checkbox, .next-input-checkbox .next-checkbox--styled {
+    display: block;
+    position: absolute;
+    left: 0;
+    top: 1px;
+    height: 16px;
+    width: 16px;
+    border: 1px solid #6C798F;
+    background-color: #fff;
+    margin: 0;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    vertical-align: middle;
+    cursor: pointer;
+}
+
+.next-input-checkbox .next-checkbox {
+    z-index: 2;
+    opacity: 0;
+}
+
+.next-input-checkbox .next-checkbox--styled {
+    color: #fff;
+    border-color: #6C798F;
+    border-radius: 2px;
+    z-index: 1;
+    -webkit-transition: background-color 0.15s ease-in-out;
+    transition: background-color 0.15s ease-in-out;
+    transition: background-color 0.15s ease-in-out;
+    transition: background-color 0.15s ease-in-out, background-color 0.15s ease-in-out;
+}
+
+.next-input-checkbox .next-checkbox--styled .svg-next-icon {
+    display: block;
+    top: 2px;
+    left: 2px;
+    position: absolute;
+    -webkit-transform: scale(0);
+    transform: scale(0);
+    -webkit-transition: -webkit-transform 0.15s ease-in-out;
+    transition: -webkit-transform 0.15s ease-in-out;
+    transition: transform 0.15s ease-in-out;
+    transition: transform 0.15s ease-in-out, -webkit-transform 0.15s ease-in-out;
+    z-index: 2;
+}
+
+.next-input-checkbox .next-checkbox:checked~.next-checkbox--styled {
+    background-color: #0052CC;
+    border-color: transparent;
+}
+
+.next-input-checkbox .next-checkbox:checked~.next-checkbox--styled .svg-next-icon.checkmark {
+    -webkit-transform: scale(1);
+    transform: scale(1);
+}
+
+.next-input-checkbox.input-disabled .next-checkbox, .next-input-checkbox.input-disabled .next-checkbox--styled {
+    cursor: default;
+}
+
+.next-input-checkbox.input-disabled .next-checkbox:checked~.next-checkbox--styled {
+    border-color: transparent;
+    background: #DFE1E5;
+}
+
+.next-input-checkbox.input-disabled .next-checkbox:not(:checked)~.next-checkbox--styled {
+    border: 1px solid #DFE1E5;
+    background: #fff;
+}

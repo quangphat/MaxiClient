@@ -1,0 +1,121 @@
+.ui-selectbox {
+    position: relative;
+}
+
+.ui-selectbox .ui-select-control {
+    background-color: #fff;
+    outline: none;
+    overflow: hidden;
+    position: relative;
+    width: 100%;
+    border: 1px solid #C1C7D0;
+    border-radius: 3px;
+    height: 40px;
+    cursor: pointer;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -khtml-user-select: none;
+    -ms-user-select: none;
+}
+
+.ui-selectbox.style-link .ui-select-control, .ui-selectbox.ui-selectbox--openning.style-link .ui-select-control {
+    border: 0;
+    text-align: right;
+    height: auto;
+}
+
+.ui-selectbox.style-link .ui-select-control .ui-select-value, .ui-selectbox.style-link .ui-select-control .ui-select-arrow {
+    padding: 0
+}
+
+.ui-selectbox .ui-select-control .ui-select-cell {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+}
+
+.ui-selectbox .ui-select-control .ui-select-value {
+    padding: 10px;
+    -ms-flex-preferred-size: 0;
+    flex-basis: 0;
+    -webkit-box-flex: 1;
+    -ms-flex-positive: 1;
+    flex-grow: 1;
+    max-width: 100%;
+}
+
+.ui-selectbox .ui-select-control .ui-select-arrow {
+    color: #212121;
+    padding: 10px 15px 10px 10px;
+    background: #fff;
+    -webkit-box-flex: 0;
+    -ms-flex: 0 0 auto;
+    flex: 0 0 auto;
+    width: 35px;
+    max-width: none;
+}
+
+.ui-selectbox .ui-select-control .ui-select-arrow .svg-next-icon {
+    fill: #6C798F
+}
+
+.ui-selectbox.ui-selectbox--openning .ui-select-control {
+    border: 1px solid #0052CC;
+    z-index: 2;
+}
+
+.ui-selectbox .select-menu-outer {
+    position: absolute;
+    top: calc(100%);
+    left: 0;
+    width: 100%;
+    background: #fff;
+    box-shadow: 0 3px 6px 0 rgba(33, 33, 33, 0.1);
+    -webkit-box-shadow: 0 3px 6px 0 rgba(33, 33, 33, 0.1);
+    display: none;
+    z-index: 2;
+    max-height: 200px;
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+
+.ui-selectbox .select-menu-outer.droup-top {
+    top: auto;
+    bottom: calc(100%);
+}
+
+.ui-selectbox.ui-selectbox--openning .select-menu-outer {
+    display: block;
+}
+
+.ui-selectbox .select-menu-outer>ul>li {
+    border: 0;
+    width: 100%;
+    outline: none;
+    font-size: 14px;
+    line-height: 18px;
+    padding: 11px;
+    color: #212121;
+    word-wrap: break-word;
+}
+
+.ui-selectbox .select-menu-outer>ul>li:hover {
+    background: #F4F5F7;
+    cursor: pointer;
+}
+
+.ui-selectbox.ui-dropup .select-menu-outer {
+    top: auto;
+    bottom: 100%;
+}
+
+.active-selection--component{
+    background: #4178f6;
+    color: white !important;
+}
+
+.active-selection--component:hover,
+.active-selection--component:focus,
+.active-selection--component:visited{
+    background: #4178f6 !important;
+}
