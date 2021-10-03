@@ -1,7 +1,5 @@
 import * as React from 'react';
 import { NavLink } from 'react-router-dom';
-import { Avatar } from '../../components';
-import * as Utils  from '../../infrastructure/Utils'
 
 
 interface LeftMenuProps {

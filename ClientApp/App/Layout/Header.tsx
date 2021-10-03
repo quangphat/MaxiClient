@@ -1,5 +1,4 @@
 ﻿import * as React from 'react';
-import { Avatar } from '../../components';
 import * as Utils  from '../../infrastructure/Utils'
 import "./header.css";
 

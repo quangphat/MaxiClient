@@ -1,15 +1,8 @@
 ﻿import * as React from 'react';
 import * as Models from '../../Models'
 import * as Utils from '../../infrastructure/Utils'
-import { NavLink } from 'react-router-dom';
-import { Avatar, ArticleStatus, TagDisplay } from '..';
-import * as RoutPath from '../../infrastructure/RoutePath'
-import * as FormatHelper from '../../infrastructure/FormatHelper';
-import * as Markdown from 'react-markdown';
-import { CodeBlock } from '../CodeBlock/CodeBlock'
 import "./index.css";
-import { BoolMark, CreateSVG } from '../../CoreComponents';
-import { JobItemTagInfo } from '../JobItemTagInfo/JobItemTagInfo';
+import { CreateSVG } from '../../CoreComponents';
 interface TeamItemProps {
     team: Models.IUSPTeam,
     isShowStatus?: boolean

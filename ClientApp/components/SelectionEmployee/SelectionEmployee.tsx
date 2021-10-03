@@ -1,6 +1,5 @@
 import * as React from 'react';
 import * as Utils from '../../infrastructure/Utils'
-import { TagDisplay } from '..'
 import {  IOptionSimple, ISelectItem, IUSPTeam } from '../../Models';
 import { ReactSelectCustom } from '../ReactSelectCustom/ReactSelectCustom';
 import { PersonRepository } from '../../repositories/PersonRepository';

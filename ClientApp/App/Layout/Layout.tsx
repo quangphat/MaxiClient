@@ -5,8 +5,6 @@ import * as PropTypes from 'prop-types';
 import { NavLink } from 'react-router-dom';
 import * as Utils from '../../infrastructure/Utils'
 import * as RoutePath from '../../infrastructure/RoutePath'
-import { IAccount } from '../../Models/IAccount'
-import { INotification } from '../../Models/INotification'
 import { AccountRepository } from '../../repositories/AccountRepository'
 //import * as SignalR from '../../infrastructure/SignalR'
 import ReactNotification from "react-notifications-component";
@@ -19,7 +17,7 @@ export interface MainLayoutProps {
     routerHistory?: H.History
 }
 interface MainLayoutStates {
-    account: IAccount
+    
 }
 export class Layout extends React.Component<MainLayoutProps, MainLayoutStates> {
     notificationDOMRef: any;
@@ -27,7 +25,6 @@ export class Layout extends React.Component<MainLayoutProps, MainLayoutStates> {
     constructor(props: any) {
         super(props);
         this.state = {
-            account: Utils.GetAccount()
         }
         this.notificationDOMRef = React.createRef();
     }
@@ -40,29 +37,8 @@ export class Layout extends React.Component<MainLayoutProps, MainLayoutStates> {
 
         }
     }
-    componentDidMount() {
-        this.createSignalrConnection()
-    }
-    private createSignalrConnection() {
-        //if (Utils.isLogin()) {
-        //    SignalR.createHubConnection();
-        //    SignalR.hubConnection.on('Notify', (Notify) => {
-        //        this.ShowMessage('success', "Bài viết của bạn đã được xuất bản");
-        //    });
-        //}
-    }
 
 
-    private _sendCommentNotify(Notify: INotification) {
-        //if (Utils.isLogin()) {
-        //    SignalR.hubConnection
-        //        .invoke('Notify', Notify).then((response) => {
-        //        })
-        //        .catch(err => console.error(err));
-        //}
-
-
-    }
     static childContextTypes = {
         ShowMessage: PropTypes.func,
         ShowErrorMessage: PropTypes.func,
@@ -75,8 +51,8 @@ export class Layout extends React.Component<MainLayoutProps, MainLayoutStates> {
             ShowMessage: this.ShowMessage.bind(this),
             ShowErrorMessage: this.ShowErrorMessage.bind(this),
             ShowSuccessMessage: this.ShowSuccessMessage.bind(this),
-            ShowSmartMessage: this.ShowSmartMessage.bind(this),
-            _sendCommentNotify: this._sendCommentNotify.bind(this)
+            ShowSmartMessage: this.ShowSmartMessage.bind(this)
+           
         }
     }
     private ShowErrorMessage(this: any, messageCode: string) {

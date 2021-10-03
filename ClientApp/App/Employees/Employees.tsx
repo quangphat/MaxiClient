@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { RouteComponentProps } from 'react-router';
-import { TeamItem } from '../../components/JobItem/TeamItem'
+import { TeamItem } from '../../components/TeamItem/TeamItem'
 import { Button, CreateSVG, TableList } from '../../CoreComponents'
 import * as Models from '../../Models'
 import * as Utils from '../../infrastructure/Utils'
