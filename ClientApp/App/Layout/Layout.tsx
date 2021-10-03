@@ -5,11 +5,8 @@ import * as PropTypes from 'prop-types';
 import { NavLink } from 'react-router-dom';
 import * as Utils from '../../infrastructure/Utils'
 import * as RoutePath from '../../infrastructure/RoutePath'
-import { AccountRepository } from '../../repositories/AccountRepository'
-//import * as SignalR from '../../infrastructure/SignalR'
 import ReactNotification from "react-notifications-component";
 import "react-notifications-component/dist/theme.css";
-import { store } from 'react-notifications-component';
 import * as MessagesCode from '../../infrastructure/messages.json'
 import Header from './Header'
 import LeftMenu from './LeftMenu';

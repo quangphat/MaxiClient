@@ -27,4 +27,9 @@ export const PersonRepository = {
             return response;
         })
     },
+    Delete: async (id:number) => {
+        return Fetch.Delete(`/api/employees/${id}`,null).then(response => {
+            return response;
+        })
+    },
 }

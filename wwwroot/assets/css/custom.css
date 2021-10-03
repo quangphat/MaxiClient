@@ -362,3 +362,19 @@ span.required {
 .css-26l3qy-menu{
     z-index: 1000!important;
 }
+.py-20{
+    padding-top: 20px!important;
+    padding-bottom: 20px!important;
+  }
+  .px-10{
+    padding-right: 10px!important;
+    padding-left: 10px!important;
+  }
+  .px-15{
+    padding-right: 15px!important;
+    padding-left: 15px!important;
+  }
+  .px-20{
+    padding-right: 20px!important;
+    padding-left: 20px!important;
+  }

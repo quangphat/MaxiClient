@@ -1,7 +1,7 @@
 import * as React from 'react';
 import { RouteComponentProps } from 'react-router';
 import { TeamItem } from '../../components/TeamItem/TeamItem'
-import { Button, TableList } from '../../CoreComponents'
+import { Button, Modal, TableList } from '../../CoreComponents'
 import * as Models from '../../Models'
 import * as Utils from '../../infrastructure/Utils'
 import * as PagingHelpers from '../../infrastructure/PagingHelpers'
@@ -19,6 +19,7 @@ interface TeamEditStates {
     team: Models.IUSPTeam,
     members: Models.IUSPEmployee[],
     paging: IPaging,
+    isOpeningPopupDelete: boolean
 }
 export class TeamEdit extends React.Component<RouteComponentProps<any>, TeamEditStates> {
     constructor(props: any) {
@@ -26,6 +27,7 @@ export class TeamEdit extends React.Component<RouteComponentProps<any>, TeamEdit
 
         this.state = {
             team: null,
+            isOpeningPopupDelete:false,
             members: [],
             paging: {
                 page: 1,
@@ -105,6 +107,27 @@ export class TeamEdit extends React.Component<RouteComponentProps<any>, TeamEdit
 
         })
     }
+
+    private onDelete() {
+        TeamRepository.Delete(this.state.team.id).then(res => {
+            if (res != null && res.success) {
+
+                this.setState({ isOpeningPopupDelete: false })
+                Utils.ShowSuccess("Thành công")
+                this.props.history.push(RoutPath.Path.home)
+            }
+            else {
+                this.setState({ isOpeningPopupDelete: false })
+                if (res) {
+                    Utils.ShowError(res.error.code)
+                }
+                else {
+                    Utils.ShowError("Không thành công, vui lòng thử lại")
+                }
+            }
+
+        })
+    }
     renderTeamMember() {
         let { members } = this.state
         if (Utils.isArrNullOrHaveNoItem(members))
@@ -124,6 +147,37 @@ export class TeamEdit extends React.Component<RouteComponentProps<any>, TeamEdit
                 <div className="text-center">{this.state.paging.hasMore && <LoadMore onClick={() => this.onClickGetMore()} />}</div>
             </div>
         </div>
+    }
+
+    
+    renderDeletePopup() {
+        if (this.state.team == null)
+            return
+        return <Modal isOpen={this.state.isOpeningPopupDelete}
+            isBtnClose={false}
+            footerDisabledCloseModal={true}
+            headerTitle={"Xóa nhóm"}
+            onClose={() => this.setState({ isOpeningPopupDelete: false })}
+            bodyContent={
+                <div className="py-20 px-10 text-secondary">
+                    Bạn có chắc chắn muốn xóa nhóm này? Hành động sẽ không thể phục hồi
+                </div>
+            }
+            footerContent={
+                <div className="row">
+                    <div className="col text-right">
+                        <Button onClick={() => this.setState({ isOpeningPopupDelete: false })} type='default' className="mr-3">
+                            Hủy
+                        </Button>
+                        <Button type='danger' onClick={() => this.onDelete()} className='photo-overlay-actions__link'>
+                            Xóa
+                        </Button>
+                    </div>
+                </div>
+            }
+        >
+
+        </Modal>
     }
 
     private renderForm() {
@@ -183,6 +237,7 @@ export class TeamEdit extends React.Component<RouteComponentProps<any>, TeamEdit
                 </div>
 
             </div>
+            <div className="right mb-50"></div>
         </div>
 
     }
@@ -192,11 +247,17 @@ export class TeamEdit extends React.Component<RouteComponentProps<any>, TeamEdit
         if (Utils.isNullOrUndefined(this.state.team))
             return null
         return <div>
-            <div className="right mb-50"><Button type="primary" onClick={() => { this.onUpdateTeam() }}>Lưu</Button></div>
+            <div className="right mb-50">
+                <Button type="primary" onClick={() => { this.onUpdateTeam() }}>Lưu</Button>
+                <Button type="danger" onClick={() => { this.setState({isOpeningPopupDelete:true}) }}>Xóa</Button>
+                </div>
             <div className="container-md homepage px-md-4">
                 {this.renderForm()}
+                
                 {this.renderTeamMember()}
+                {this.renderDeletePopup()}
             </div>
+            
         </div>
     }
 }

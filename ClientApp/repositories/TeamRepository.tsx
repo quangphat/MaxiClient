@@ -38,4 +38,9 @@ export const TeamRepository = {
             return response;
         })
     },
+    Delete: async (id:number) => {
+        return Fetch.Delete(`/api/teams/${id}`,null).then(response => {
+            return response;
+        })
+    },
 }

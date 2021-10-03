@@ -1,7 +1,7 @@
 import * as React from 'react';
 import { RouteComponentProps } from 'react-router';
 import { TeamItem } from '../../components/TeamItem/TeamItem'
-import { Button, Input, TableList } from '../../CoreComponents'
+import { Button, Input, Modal, TableList } from '../../CoreComponents'
 import * as Models from '../../Models'
 import * as Utils from '../../infrastructure/Utils'
 import * as PagingHelpers from '../../infrastructure/PagingHelpers'
@@ -14,17 +14,19 @@ import { SelectEmployee } from '../../components/SelectionEmployee/SelectionEmpl
 import { SelectTeam } from '../../components/SelectTeam/SelectTeam';
 import { MemberItem } from '../../components/MemberItem/MemberItem'
 import { IPaging, IUpdateEmployeeModel, IUpdateTeamModel } from '../../Models';
-import { LoadMore } from '../../components/LoadMore/LoadMore';
 import * as RoutPath from '../../infrastructure/RoutePath'
+import * as ValidateHelpers from '../../infrastructure/ValidateHelper'
 interface EmployeeEditStates {
-    employee: Models.IUSPEmployee
+    employee: Models.IUSPEmployee,
+    isOpeningPopupDelete: boolean
 }
 export class EmployeeEdit extends React.Component<RouteComponentProps<any>, EmployeeEditStates> {
     constructor(props: any) {
         super(props);
 
         this.state = {
-            employee: null
+            employee: null,
+            isOpeningPopupDelete: false
 
         };
 
@@ -44,8 +46,7 @@ export class EmployeeEdit extends React.Component<RouteComponentProps<any>, Empl
 
                 this.setState({ employee: response.data })
             }
-            else
-            {
+            else {
                 this.props.history.push(RoutPath.Path.employee)
             }
         })
@@ -57,13 +58,22 @@ export class EmployeeEdit extends React.Component<RouteComponentProps<any>, Empl
         let { employee } = this.state
         if (Utils.isNullOrUndefined(employee))
             return
-        PersonRepository.Update({ id: employee.id, 
-            fullName: employee.fullName, 
+
+        if (!Utils.isNullOrWhiteSpace(employee.email)) {
+            if (!ValidateHelpers.IsValidEmail(employee.email)) {
+                Utils.ShowError("Email không hợp lệ")
+                return
+            }
+
+        }
+        PersonRepository.Update({
+            id: employee.id,
+            fullName: employee.fullName,
             teamId: employee.teamId,
-            title:employee.title,
-            phone:employee.phone,
-            email:employee.email
-          } as IUpdateEmployeeModel).then(res => {
+            title: employee.title,
+            phone: employee.phone,
+            email: employee.email
+        } as IUpdateEmployeeModel).then(res => {
             if (res != null && res.success) {
 
                 Utils.ShowSuccess("Thành công")
@@ -78,6 +88,57 @@ export class EmployeeEdit extends React.Component<RouteComponentProps<any>, Empl
             }
 
         })
+    }
+
+    private onDelete() {
+        PersonRepository.Delete(this.state.employee.id).then(res => {
+            if (res != null && res.success) {
+
+                this.setState({ isOpeningPopupDelete: false })
+                Utils.ShowSuccess("Thành công")
+                this.props.history.push(RoutPath.Path.employee)
+            }
+            else {
+                this.setState({ isOpeningPopupDelete: false })
+                if (res) {
+                    Utils.ShowError(res.error.code)
+                }
+                else {
+                    Utils.ShowError("Không thành công, vui lòng thử lại")
+                }
+            }
+
+        })
+    }
+
+    renderDeletePopup() {
+        if (this.state.employee == null)
+            return
+        return <Modal isOpen={this.state.isOpeningPopupDelete}
+            isBtnClose={false}
+            footerDisabledCloseModal={true}
+            headerTitle={"Xóa nhân viên"}
+            onClose={() => this.setState({ isOpeningPopupDelete: false })}
+            bodyContent={
+                <div className="py-20 px-10 text-secondary">
+                    Bạn có chắc chắn muốn xóa nhân viên này? Hành động sẽ không thể phục hồi
+                </div>
+            }
+            footerContent={
+                <div className="row">
+                    <div className="col text-right">
+                        <Button onClick={() => this.setState({ isOpeningPopupDelete: false })} type='default' className="mr-3">
+                            Hủy
+                        </Button>
+                        <Button type='danger' onClick={() => this.onDelete()} className='photo-overlay-actions__link'>
+                            Xóa
+                        </Button>
+                    </div>
+                </div>
+            }
+        >
+
+        </Modal>
     }
 
     private renderForm() {
@@ -106,7 +167,7 @@ export class EmployeeEdit extends React.Component<RouteComponentProps<any>, Empl
                                 if (Utils.isNullOrUndefined(item)) {
                                     this.setState({
                                         employee: {
-                                            ...this.state.employee,teamId: 0,
+                                            ...this.state.employee, teamId: 0,
                                         }
                                     })
                                     return
@@ -119,7 +180,7 @@ export class EmployeeEdit extends React.Component<RouteComponentProps<any>, Empl
                 <div className="col-sm-6 col-12">
                     <div className="form-group">
                         <label >Mã nhân viên</label>
-                        <Input  value={employee.code} isReadOnly={true}  onChange={()=>{}} />
+                        <Input value={employee.code} isReadOnly={true} onChange={() => { }} />
                     </div>
                 </div>
                 <div className="col-sm-6 col-12">
@@ -156,10 +217,16 @@ export class EmployeeEdit extends React.Component<RouteComponentProps<any>, Empl
         if (Utils.isNullOrUndefined(this.state.employee))
             return null
         return <div>
-            <div className="right mb-50"><Button type="primary" onClick={() => { this.onUpdate() }}>Lưu</Button></div>
+            <div className="right mb-50">
+                <Button type="primary" onClick={() => { this.onUpdate() }}>Lưu</Button>
+            </div>
             <div className="container-md homepage px-md-4">
                 {this.renderForm()}
             </div>
+            <div className="right mb-50">
+                <Button type="danger" onClick={() => { this.setState({ isOpeningPopupDelete: true }) }}>Xóa</Button>
+            </div>
+            {this.renderDeletePopup()}
         </div>
     }
 }

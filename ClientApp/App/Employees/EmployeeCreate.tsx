@@ -16,6 +16,7 @@ import { MemberItem } from '../../components/MemberItem/MemberItem'
 import { IPaging, IUpdateEmployeeModel, IUpdateTeamModel } from '../../Models';
 import { LoadMore } from '../../components/LoadMore/LoadMore';
 import * as RoutPath from '../../infrastructure/RoutePath'
+import * as ValidateHelpers from '../../infrastructure/ValidateHelper'
 interface EmployeeCreateStates {
     employee: IUpdateEmployeeModel
 }
@@ -46,6 +47,15 @@ export class EmployeeCreate extends React.Component<RouteComponentProps<any>, Em
         let { employee } = this.state
         if (Utils.isNullOrUndefined(employee))
             return
+            if(!Utils.isNullOrWhiteSpace(employee.email))
+        {
+            if(!ValidateHelpers.IsValidEmail(employee.email))
+            {
+                Utils.ShowError("Email không hợp lệ")
+                return
+            }
+            
+        }
         PersonRepository.Create({ id: employee.id, 
             fullName: employee.fullName, 
             teamId: employee.teamId,
