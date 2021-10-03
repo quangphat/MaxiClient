@@ -6,7 +6,14 @@
 export const Path = {
     test: '/test',
     employee: '/employees',
+    employee_create: '/employees/create',
+    employee_edit: (id?: number): string => {
+        if (isNaN(id))
+            return '/employees/:id'
+        return `/employees/${id}`
+    },
     home:'/',
+    team_create:'/teams/create',
     team_edit: (id?: string): string => {
         if (isNullOrWhiteSpace(id))
             return '/teams/:id'

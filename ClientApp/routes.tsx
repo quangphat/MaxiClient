@@ -43,8 +43,11 @@ export const routes = <React.Fragment>
         <Switch>
             <RouteWithLayout exact path='/register' layout={App.EmptyLayout} component={App.Register} />
             <RouteWithLayout exact path='/' layout={App.Layout} component={App.Home} />
+            <RouteWithLayout exact path={RoutePath.Path.team_create} layout={App.Layout} component={App.TeamCreate} />
             <RouteWithLayout exact path={RoutePath.Path.team_edit()} layout={App.Layout} component={App.TeamEdit} />
             <RouteWithLayout exact path={RoutePath.Path.employee} layout={App.Layout} component={App.Employees} />
+            <RouteWithLayout exact path={RoutePath.Path.employee_create} layout={App.Layout} component={App.EmployeeCreate} />
+            <RouteWithLayout exact path={RoutePath.Path.employee_edit()} layout={App.Layout} component={App.EmployeeEdit} />
             {/*<RoleRoute exact path='/' component={App.Home} />*/}
             <RouteWithLayout exact path={RoutePath.Path.test} layout={App.Layout} component={App.Test} />
             <RouteWithLayout exact path={RoutePath.Path.login} layout={App.Layout} component={App.Login} />

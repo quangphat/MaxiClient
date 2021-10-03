@@ -81,9 +81,6 @@
         margin: 0 0 -10px -10px;
     }
 
-@media (min-width: 992px) .ui-product-photo .ui-product-photo-grid .ui-product-photo-item {
-    width: 16.66%;
-}
 
 .d-block {
     display: block !important;
@@ -352,4 +349,16 @@ span.required {
 
 .steps li.reject .step {
     border-color: #d15b47;
+}
+.mb-50{
+    margin-bottom: 50px!important;
+}
+.mb-20{
+    margin-bottom: 20px!important;
+}
+.right{
+    float: right;
+}
+.css-26l3qy-menu{
+    z-index: 1000!important;
 }

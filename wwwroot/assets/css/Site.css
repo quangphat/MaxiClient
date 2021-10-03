@@ -226,3 +226,31 @@ ul>li{
         .d-inline-flex{
             display: inline-flex;
         }
+
+        .loadmore-container{
+            width: 100%;
+            margin-top: 16px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        .loadmore-container .btn-loadmore{
+            display: flex;
+            -webkit-box-align: center;
+            align-items: center;
+            -webkit-box-pack: center;
+            justify-content: center;
+            font-size: 12px;
+            padding: 3px;
+            border-radius: 5px;
+            border: 1px solid #eaeaea;
+            background: #fff;
+            color: #000;
+            cursor: pointer;
+            transition: all 0.2s ease 0s;
+            height: 32px;
+            font-weight: 600;
+        }
+        .btn-loadmore:hover {
+            color: #111;
+            background: #e1e2e3;
+        }

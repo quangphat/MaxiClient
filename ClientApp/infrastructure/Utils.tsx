@@ -1,5 +1,5 @@
 ﻿import * as H from 'history';
-import {  IOptionSimple, ISelectItem,IAccount } from '../Models'
+import {  IOptionSimple, ISelectItem,IAccount, IUSPTeam, IUSPEmployee } from '../Models'
 import { createBrowserHistory } from 'history';
 import { IAuthor } from '../Models/IAuthor';
 import { store } from 'react-notifications-component';
@@ -24,9 +24,24 @@ export const convertSelectItemsToOptionSimple = (data: ISelectItem[],
     return results
 }
 
-export const convertOptionSimplesToSelectItems=(data: IOptionSimple[],
-     init: boolean = false, 
-     initLabel:string ='Vui lòng chọn'):ISelectItem[]=> {
+export const convertOptionSimplesToSelectItems = (data: any[],
+    init: boolean = false,
+    initLabel: string = 'Vui lòng chọn'): any[] => {
+
+    let results = data
+    if (isArrNullOrHaveNoItem(data)) {
+        if (init) {
+            results.push({ value: getNewGuid(), label: initLabel })
+            return results
+        }
+        return results
+    }
+    return results
+}
+
+export const convertUspTeamsToSelectItems = (data: IUSPTeam[],
+    init: boolean = false,
+    initLabel: string = 'Vui lòng chọn'): any[] => {
 
     let results = [] as ISelectItem[]
     if (isArrNullOrHaveNoItem(data)) {
@@ -36,10 +51,35 @@ export const convertOptionSimplesToSelectItems=(data: IOptionSimple[],
         }
         return results
     }
-
-    data.map(p => results.push({ value: p.code, label: p.display }))
+    else
+    {
+        data.forEach(p=>{
+            results.push({value:p.id.toString(), label:p.name})
+        })
+    }
     return results
 }
+export const convertUspEmployeesToSelectItems = (data: IUSPEmployee[],
+    init: boolean = false,
+    initLabel: string = 'Vui lòng chọn'): any[] => {
+
+    let results = [] as ISelectItem[]
+    if (isArrNullOrHaveNoItem(data)) {
+        if (init) {
+            results.push({ value: getNewGuid(), label: initLabel })
+            return results
+        }
+        return results
+    }
+    else
+    {
+        data.forEach(p=>{
+            results.push({value:p.id.toString(), label:p.fullName})
+        })
+    }
+    return results
+}
+
 export const convertOptionSimpleToSelectItem=(data: IOptionSimple):ISelectItem=> {
 
    if (isNullOrUndefined(data)) {

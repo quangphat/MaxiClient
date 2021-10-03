@@ -1,18 +1,29 @@
 import * as Models from '../Models'
 import { Fetch } from './Fetch'
+import * as ApiHelpers from '../infrastructure/ApiHelpers'
 export const PersonRepository = {
-    GetByProfileName: async (profileName: string) => {
-        return Fetch.Get(`/person/${profileName}`).then(response => {
+    Create: async (model: Models.IUpdateEmployeeModel) => {
+        return Fetch.Post('/api/employees', model).then(response => {
             return response;
         })
     },
-    GetPersonSkills: async (personId: string) => {
-        return Fetch.Get(`/person/skills/${personId}`).then(response => {
+    GetDetail: async (id: number) => {
+        return Fetch.Get(`/api/employees/${id}`, null).then(response => {
             return response;
         })
     },
-    UpdateSkill: async (skills: Models.StringModel) => {
-        return Fetch.PUT(`/person/skills`, skills).then(response => {
+    Search: async (searchStr: string, page: number, limit: number) => {
+        let path = ApiHelpers.GetApiUrl('/api/employees', {
+            page: page,
+            limit: limit,
+            freeText: searchStr
+        })
+        return Fetch.Get(path, null).then(response => {
+            return response;
+        })
+    },
+    Update: async (model: Models.IUpdateEmployeeModel) => {
+        return Fetch.PUT(`/api/employees`, model).then(response => {
             return response;
         })
     },

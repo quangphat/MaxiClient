@@ -2,6 +2,7 @@
 export { EmptyLayout } from './Layout/EmptyLayout';
 export { Home } from './Home/Home';
 export { TeamEdit } from './Home/TeamEdit';
+export { TeamCreate } from './Home/TeamCreate';
 export { Test } from './Test/Test';
 //export { ArticleDetail } from './Article/ArticleDetail';
 export { CreateArticle } from './Article/CreateArticle';
@@ -15,3 +16,5 @@ export { Term } from './Legal/Term';
 export { Error } from './Error/Error'
 export { Login } from './Login/login'
 export { Employees } from './Employees/Employees'
+export { EmployeeCreate } from './Employees/EmployeeCreate'
+export { EmployeeEdit } from './Employees/EmployeeEdit'

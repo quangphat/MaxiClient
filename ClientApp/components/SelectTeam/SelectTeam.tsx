@@ -4,8 +4,9 @@ import { TagDisplay } from '..'
 import {  IOptionSimple, ISelectItem, IUSPTeam } from '../../Models';
 import { ReactSelectCustom } from '../ReactSelectCustom/ReactSelectCustom';
 import { PersonRepository } from '../../repositories/PersonRepository';
+import { TeamRepository } from '../../repositories/TeamRepository';
 
-interface ISelectEmployeeProps {
+interface ISelectTeamProps {
     selectedItems?: ISelectItem[],
     className?: string,
     onChange?: Function
@@ -13,13 +14,13 @@ interface ISelectEmployeeProps {
     isMulti?: boolean
 }
 
-interface ISelectEmployeeStates {
+interface ISelectTeamStates {
     datas: ISelectItem[],
     selectedItems: ISelectItem[],
     dataChangeFlag: number
 }
 
-export class SelectEmployee extends React.Component<ISelectEmployeeProps, ISelectEmployeeStates> {
+export class SelectTeam extends React.Component<ISelectTeamProps, ISelectTeamStates> {
     constructor(props: any) {
         super(props)
         
@@ -39,7 +40,7 @@ export class SelectEmployee extends React.Component<ISelectEmployeeProps, ISelec
         isMulti: false
     }
 
-    componentWillReceiveProps(newProps: ISelectEmployeeProps) {
+    componentWillReceiveProps(newProps: ISelectTeamProps) {
         
         if (this.props.selectedItems != newProps.selectedItems) {
             this.setState({ selectedItems: Utils.convertOptionSimplesToSelectItems(newProps.selectedItems) })
@@ -51,12 +52,12 @@ export class SelectEmployee extends React.Component<ISelectEmployeeProps, ISelec
     }
 
     onSearch(freeText: string = '') {
-        PersonRepository.Search(freeText, 1, 50).then(response => {
+        TeamRepository.Search(freeText, 1, 30).then(response => {
             
             if (response.success && response.data) {
                 if (!Utils.isArrNullOrHaveNoItem(response.data.datas)) {
                 
-                    this.setState({ datas:Utils.convertUspEmployeesToSelectItems(response.data.datas), dataChangeFlag: this.state.dataChangeFlag + 1 })
+                    this.setState({ datas:Utils.convertUspTeamsToSelectItems(response.data.datas), dataChangeFlag: this.state.dataChangeFlag + 1 })
                 }
                 else {
                     this.setState({ datas: [], dataChangeFlag: this.state.dataChangeFlag + 1 })
@@ -84,18 +85,6 @@ export class SelectEmployee extends React.Component<ISelectEmployeeProps, ISelec
                 this.props.onChange(selectedItems)
         })
     }
-    private onRemoveItem(item) {
-        if (item == null)
-            return;
-        let { selectedItems } = this.state
-
-        selectedItems = selectedItems.filter(p => p.value != item.value)
-        this.setState({ selectedItems: selectedItems }, () => {
-
-            if (this.props.onChange)
-                this.props.onChange(selectedItems)
-        })
-    }
 
 
     private renderBody() {
@@ -104,7 +93,7 @@ export class SelectEmployee extends React.Component<ISelectEmployeeProps, ISelec
 
         return <ReactSelectCustom selectedItems={selectedItems}
             options={datas}
-            name={'select_employee'}
+            name={'select_Team'}
             isMultiple={isMulti}
             className={this.props.className}
             dataChangeFlag={this.state.dataChangeFlag}
